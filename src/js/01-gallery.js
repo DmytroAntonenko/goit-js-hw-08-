@@ -10,7 +10,7 @@ const imagesContainer = document.querySelector(".gallery");
 const cardsMarkup = createImagesCardsMarkup(galleryItems);
 
 imagesContainer.insertAdjacentHTML('afterbegin', cardsMarkup);
-
+console.log(cardsMarkup)
 
 
 function createImagesCardsMarkup(images) {
