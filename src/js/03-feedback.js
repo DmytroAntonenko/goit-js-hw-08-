@@ -24,12 +24,23 @@ form.addEventListener ('submit', (event) =>{
 
 function populateTextInput() {
     const saveData = localStorage.getItem('KEY');
-    const parsedData = JSON.parse(saveData);
-    if(parsedData) {
-    form.email.value = parsedData.email || '';
-    form.message.value = parsedData.message || '';
-    }
-    
+    if(saveData) {
+        const parsedData = JSON.parse(saveData);
+        Object.entries(parsedData).forEach(([name, value]) => {
+        // formData[name] = value;
+        form.elements[name].value = value;
+        });
+    } 
 };
+
+
+// function populateTextInput() {
+//     const saveData = localStorage.getItem('KEY');
+//     const parsedData = JSON.parse(saveData);
+//     if(parsedData) {
+//     form.email.value = parsedData.email || '';
+//     form.message.value = parsedData.message || '';
+//     } 
+// };
 
 
